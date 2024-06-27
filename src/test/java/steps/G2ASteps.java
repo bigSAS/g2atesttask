@@ -24,6 +24,7 @@ public class G2ASteps extends WebSteps {
         logger.info("---------------------------");
         logger.info("Searching for game: {}", gameTitle);
         logger.info("---------------------------");
+        page.waitForCondition(() -> page.locator("input[type=search]").isEnabled());
         var searchInput = page.locator("input[type=search]");
         searchInput.fill(gameTitle);
         var searchButton = page.locator(".search_icon");
@@ -54,6 +55,9 @@ public class G2ASteps extends WebSteps {
 
     @Then("Cart should contain the game")
     public void cart_should_contain_the_game() {
+        getPage().waitForCondition(
+                () -> getPage().locator("//div[contains(@class, 'indexes__SellerWrapper')]").isDisabled()
+        );
         var gameContainerXpath = String.format(
                 "//div[contains(@class, 'indexes__SellerWrapper') and contains(., '%s')]",
                 gameTitle
