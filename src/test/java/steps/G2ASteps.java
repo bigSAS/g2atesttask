@@ -56,7 +56,7 @@ public class G2ASteps extends WebSteps {
     @Then("Cart should contain the game")
     public void cart_should_contain_the_game() {
         getPage().waitForCondition(
-                () -> getPage().locator("//div[contains(@class, 'indexes__SellerWrapper')]").isDisabled()
+                () -> getPage().locator("//div[contains(@class, 'indexes__SellerWrapper')]").isVisible()
         );
         var gameContainerXpath = String.format(
                 "//div[contains(@class, 'indexes__SellerWrapper') and contains(., '%s')]",
