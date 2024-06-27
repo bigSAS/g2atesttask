@@ -48,6 +48,7 @@ Dostępne opcje konfiguracyjne:
 - browser.type - rodzaj przeglądarki, dostępne opcje: chromium, firefox, webkit
 - browser.headed - czy przeglądarka ma być uruchomiona w trybie headless (true) czy nie (false)
 - browser.context.default.timeout.ms - domyślny timeout dla kontekstu przeglądarki w milisekundach
+- browser.slomo.ms - opóźnienie w milisekundach między kolejnymi akcjami w przeglądarce
 
 ## Uwagi
 
