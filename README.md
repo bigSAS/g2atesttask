@@ -25,7 +25,7 @@ docker build -t g2atests .
 
 ```bash
 docker run --rm \
-  -v $pwd/dockerreports:/app/target/reports \
+  -v $PWD/dockerreports:/app/target/reports \
   -e GAME_TITLE=Sekiro \
   -e CUCUMBER_FILTER_TAGS=@Web \
   g2atests
@@ -36,7 +36,7 @@ Gdzie:
 - GAME_TITLE - tytuł gry, dla której chcemy uruchomić testy
 - CUCUMBER_FILTER_TAGS - tagi Cucumbera, które chcemy uruchomić - w naszym przypadku @Web
 
-NOTE: Po zakończeniu testów, raporty oraz playwright trace'y będą dostępne w katalogu `$pwd/dockerreports`.
+NOTE: Po zakończeniu testów, raporty oraz playwright trace'y będą dostępne w katalogu `$PWD/dockerreports`.
 
 ## Konfiguracja
 
