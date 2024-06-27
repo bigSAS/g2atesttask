@@ -37,6 +37,7 @@ public class G2ASteps extends WebSteps {
         var page = getPage();
         var xpath = String.format("//li[contains(., '%s')][1]", gameTitle);
         var gameCard = page.locator(xpath);
+        page.waitForCondition(gameCard::isVisible);
         gameCard.click();
         gamePrice = page.locator("//label[@data-locator='ppa-payment']").innerText();
         logger.info("Price: {}", gamePrice);
